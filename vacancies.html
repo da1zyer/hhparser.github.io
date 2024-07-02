@@ -19,6 +19,15 @@
         <div class="header_item">
             <a href="analytics.html" class="header_item_text">Аналитика</a>
         </div>
+        <div class="header_item">
+            <a href="signup.html" class="header_item_text" id="signup">Регистрация</a>
+        </div>
+        <div class="header_item">
+            <a href="login.html" class="header_item_text" id="login">Вход</a>
+        </div>
+        <div class="header_item header_item_user">
+            <p class="header_item_text" id="user"></p>
+        </div>
     </div>
     <div class="main">
         <div class="text">Поиск вакансий по фильтрам:</div>
@@ -27,7 +36,7 @@
                 <div class="form_block_text">Должность</div>
             </div>
             <div class="form_block2">
-                <input type="text" class="form_block_form">
+                <input type="text" class="form_block_form" id="vac_text" autocomplete="off">
             </div>
         </div>
         <div class="form_block">
@@ -35,20 +44,40 @@
                 <div class="form_block_text">Зарплата от</div>
             </div>
             <div class="form_block2">
-                <input type="text" class="form_block_form">
+                <input type="text" class="form_block_form" id="vac_salary" value=0  autocomplete="off">
             </div>
         </div>
         <div class="form_block">
             <div class="form_block2">
-                <div class="form_block_text">Зарплата до</div>
+                <div class="form_block_text">Только с указанной з/п</div>
             </div>
             <div class="form_block2">
-                <input type="text" class="form_block_form">
+                <select type="text" class="form_block_form" id="vac_zp">
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
             </div>
         </div>
-        <div class="find">
-            <div class="find_button">Найти</div>
+        <div class="form_block">
+            <div class="form_block2">
+                <div class="form_block_text">Опыт</div>
+            </div>
+            <div class="form_block2">
+                <select type="text" class="form_block_form" id="vac_exp">
+                    <option value="noExperience">Нет опыта</option>
+                    <option value="between1And3">От 1 до 3 лет</option>
+                    <option value="between3And6">От 3 до 6 лет</option>
+                    <option value="moreThan6">Больше 6 лет</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div class="find">
+                <div class="find_button" id="vac_search">Найти</div>
+            </div>
+            <div class="vac_done" id="vac_done">Данные успешно получены</div>
         </div>
     </div>
 </body>
+<script src="vacancies.js"></script>
 </html>

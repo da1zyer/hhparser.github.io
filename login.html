@@ -25,11 +25,18 @@
         <div class="header_item">
             <a href="login.html" class="header_item_text" id="login">Вход</a>
         </div>
-        <div class="header_item header_item_user">
-            <p class="header_item_text" id="user"></p>
-        </div>
     </div>
-    <div class="main"></div>
+    <div class="auth">
+        <div class="form">
+            <div class="form_item_text">Email</div>
+            <input type="text" class="form_item_form" id="login_form_email" autocomplete="off">
+        </div>
+        <div class="form">
+            <div class="form_item_text">Пароль</div>
+            <input type="password" class="form_item_form" id="login_form_pass" autocomplete="off">
+        </div>
+        <button class="auth_button" id="login_button">Войти</button>
+    </div>
 </body>
-<script src="analytics.js"></script>
+<script src="login.js"></script>
 </html>
