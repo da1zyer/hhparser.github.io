@@ -10,7 +10,7 @@ async function signup(){
         login: login,
         password: password
     };
-    const response = await fetch("http://127.0.0.1:8000/signup", {
+    const response = await fetch("http://localhost:8000/signup", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -33,7 +33,7 @@ async function signup(){
             sessionStorage.setItem("token", token);
             sessionStorage.setItem("time", result["time"] * 1000);
             sessionStorage.setItem("email", result["email"]);
-            let response = await fetch('http://127.0.0.1:8000/getuserid?email='+result["email"]);
+            let response = await fetch('http://localhost:8000/getuserid?email='+result["email"]);
             let text = await response.json();
             sessionStorage.setItem("user_id", text[0]);
             window.location.href = "vacancies.html";

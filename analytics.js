@@ -96,4 +96,26 @@ async function get_user_vacancies(){
     }
 }
 
-get_user_vacancies()
+function refresh(){
+  while (document.contains(document.getElementsByClassName("an_item")[0])) {
+    document.getElementsByClassName("an_item")[0].remove()
+  }
+  get_user_vacancies();
+}
+
+async function delete_vacs(){
+  const response = await fetch("http://127.0.0.1:8000/deletevacs?id="+sessionStorage.getItem("user_id"), {
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+  });
+  const result = await response.json();
+}
+
+const refresh_button = document.querySelector('#menu_refresh');
+refresh_button.addEventListener("click", refresh);
+const delete_button = document.querySelector('#menu_delete');
+delete_button.addEventListener("click", delete_vacs);
+get_user_vacancies();
